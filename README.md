@@ -9,7 +9,9 @@ git clone https://github.com/Wuju-sudo/Windows-11-sunflower-rice.git
 or click on the green button with "code" written on it to download as zip and extract
 Note task bar is usually on automatically hide in windows settings 
 or you can also use tools like explorer patcher
-
+it is obvious you must change "<username>" to your actual username
+I added a tool called "Username_Exchanger.html" you write your actual user name and it provided a list of paths for that username
+<img src="Tool.png" width="20" height="20" />
 ## 1. Core Tools & Features
 
 | 🛠️ Tool | ⚙️ Config | 📁 Location | 📄 Description |
@@ -36,6 +38,8 @@ to access system PATH type in windows search "Edit the system environment variab
 
 ## 3. Komorebi Configuration
 
+This is for whkdrc file
+
 ### Key Bindings Modifications:
 ```
 # Terminal launch (comment out if not needed)
@@ -52,6 +56,7 @@ alt + f : komorebic toggle-float
 2. Windows 11 Start Menu Styler
 3. Windows 11 Notification Center Styler
 4. Taskbar Clock Customization
+
 from this [Folder](https://github.com/Wuju-sudo/Windows-11-sunflower-rice/tree/63acce2c51b24df51fbe7fb36026c414697d2944/10.WindHawk)
 ### Configuration Steps:
 1. Install each mod
