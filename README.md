@@ -1,5 +1,4 @@
 # Windows-11-sunflower-rice
-# Windows Configuration Setup Guide
 
 ## 1. Core Tools & Features
 
