@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Username Path Replacer</title>
+    <style>
+        body {
+            font-family: 'Consolas', 'Monaco', monospace;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+        }
+        
+        .container {
+            background-color: #252526;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            color: #569cd6;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .input-section {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #9cdcfe;
+            font-weight: bold;
+        }
+        
+        input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            font-size: 16px;
+            border: 2px solid #3c3c3c;
+            border-radius: 4px;
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            font-family: inherit;
+        }
+        
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #007acc;
+        }
+        
+        button {
+            padding: 10px 20px;
+            margin-left: 10px;
+            font-size: 16px;
+            background-color: #0e639c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: inherit;
+        }
+        
+        button:hover {
+            background-color: #1177bb;
+        }
+        
+        .output-section {
+            margin-top: 20px;
+        }
+        
+        .output-section h2 {
+            color: #4ec9b0;
+            border-bottom: 2px solid #3c3c3c;
+            padding-bottom: 10px;
+        }
+        
+        .path-list {
+            background-color: #1e1e1e;
+            border: 1px solid #3c3c3c;
+            border-radius: 4px;
+            padding: 15px;
+            min-height: 200px;
+        }
+        
+        .tool-section {
+            margin-bottom: 20px;
+            border: 1px solid #3c3c3c;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .tool-header {
+            background-color: #007acc;
+            color: white;
+            padding: 10px 15px;
+            font-weight: bold;
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .tool-paths {
+            background-color: #2d2d30;
+            padding: 0;
+        }
+        
+        .path-item {
+            margin: 0;
+            padding: 8px 15px;
+            background-color: #2d2d30;
+            word-break: break-all;
+            border-bottom: 1px solid #3c3c3c;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .path-item:last-child {
+            border-bottom: none;
+        }
+        
+        .path-text {
+            flex-grow: 1;
+            margin-right: 10px;
+            font-family: 'Consolas', monospace;
+        }
+        
+        .copy-btn {
+            padding: 5px 10px;
+            font-size: 12px;
+            background-color: #4caf50;
+            min-width: 60px;
+            margin-left: 0;
+        }
+        
+        .copy-btn:hover {
+            background-color: #45a049;
+        }
+        
+        .copy-tool-btn {
+            padding: 4px 8px;
+            font-size: 11px;
+            background-color: #4caf50;
+            border: none;
+            border-radius: 3px;
+            color: white;
+            cursor: pointer;
+        }
+        
+        .copy-tool-btn:hover {
+            background-color: #45a049;
+        }
+        
+        .clear-btn {
+            background-color: #f44336;
+        }
+        
+        .clear-btn:hover {
+            background-color: #da190b;
+        }
+
+        .copy-all-btn {
+            background-color: #4caf50;
+            float: right;
+            margin-bottom: 10px;
+        }
+
+        .copy-all-btn:hover {
+            background-color: #45a049;
+        }
+
+        /* Hidden textarea for copying */
+        .copy-textarea {
+            position: absolute;
+            left: -9999px;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🛠️ Tool Configuration Path Generator</h1>
+        
+        <div class="input-section">
+            <label for="username">Enter Username:</label>
+            <input type="text" id="username" placeholder="e.g., JohnDoe" />
+            <button onclick="generatePaths()">Generate Paths</button>
+            <button onclick="clearAll()" class="clear-btn">Clear</button>
+        </div>
+        
+        <div class="output-section">
+            <h2>📁 Directory Paths by Tool:</h2>
+            <button onclick="copyAllPaths()" class="copy-all-btn">Copy All Paths</button>
+            <div style="clear: both;"></div>
+            <div id="pathList" class="path-list">
+                <em>Enter a username and click "Generate Paths" to see the directory paths organized by tool...</em>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden textarea for reliable copying -->
+    <textarea id="copyTextarea" class="copy-textarea"></textarea>
+
+    <script>
+        const toolsData = [
+            {
+                name: "Wallpaper",
+                emoji: "🖼️",
+                paths: [
+                    'C:\\Users\\<username>\\wallpapers\\'
+                ]
+            },
+            {
+                name: "yasb",
+                emoji: "📊",
+                paths: [
+                    'C:\\Users\\<username>\\.config\\yasb\\config.yaml',
+                    'C:\\Users\\<username>\\.config\\yasb\\styles.css'
+                ]
+            },
+            {
+                name: "komorebi",
+                emoji: "🪟",
+                paths: [
+                    'C:\\Users\\<username>\\komorebi.json',
+                    'C:\\Users\\<username>\\applications.json',
+                    'C:\\Users\\<username>\\komorebi.bar.json',
+                    'C:\\Users\\<username>\\.config\\whkdrc'
+                ]
+            },
+            {
+                name: "Windows Terminal",
+                emoji: "💻",
+                paths: [
+                    'C:\\Users\\<username>\\AppData\\Local\\Packages\\Microsoft.WindowsTerminal_8wekyb3d8bbwe\\LocalState\\settings.json',
+                    'C:\\Users\\<username>\\AppData\\Local\\Packages\\Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe\\LocalState\\settings.json'
+                ]
+            },
+            {
+                name: "starship",
+                emoji: "🚀",
+                paths: [
+                    'C:\\Users\\<username>\\.config\\starship.toml'
+                ]
+            },
+            {
+                name: "PowerShell",
+                emoji: "⚡",
+                paths: [
+                    'C:\\Users\\<username>\\Documents\\PowerShell\\Microsoft.PowerShell_profile.ps1'
+                ]
+            },
+            {
+                name: "Flow Launcher",
+                emoji: "🔍",
+                paths: [
+                    'C:\\Users\\<username>\\AppData\\Roaming\\FlowLauncher\\Themes\\theme.xaml'
+                ]
+            },
+            {
+                name: "cava",
+                emoji: "🎵",
+                paths: [
+                    'C:\\Users\\<username>\\.config\\cava\\config',
+                    'C:\\Users\\<username>\\.config\\cava\\shaders\\'
+                ]
+            },
+            {
+                name: "fastfetch",
+                emoji: "⚡",
+                paths: [
+                    'C:\\Users\\<username>\\.config\\fastfetch\\config.jsonc'
+                ]
+            }
+        ];
+
+        // Store processed paths globally
+        let processedTools = [];
+        let allProcessedPaths = [];
+
+        function generatePaths() {
+            const username = document.getElementById('username').value.trim();
+            
+            if (!username) {
+                alert('Please enter a username');
+                return;
+            }
+            
+            const pathList = document.getElementById('pathList');
+            pathList.innerHTML = '';
+            
+            processedTools = [];
+            allProcessedPaths = [];
+            
+            toolsData.forEach((tool, toolIndex) => {
+                const processedPaths = tool.paths.map(path => {
+                    // Replace <username> with actual username
+                    let processedPath = path.replace(/<username>/g, username);
+                    
+                    // Remove filename if it exists (keep only directory)
+                    // Check if the path doesn't already end with a backslash
+                    if (!processedPath.endsWith('\\')) {
+                        const lastBackslashIndex = processedPath.lastIndexOf('\\');
+                        if (lastBackslashIndex !== -1) {
+                            processedPath = processedPath.substring(0, lastBackslashIndex + 1);
+                        }
+                    }
+                    
+                    return processedPath;
+                });
+                
+                // Remove duplicates for this tool
+                const uniquePaths = [...new Set(processedPaths)];
+                
+                processedTools.push({
+                    name: tool.name,
+                    emoji: tool.emoji,
+                    paths: uniquePaths
+                });
+                
+                // Add to global paths list
+                allProcessedPaths.push(...uniquePaths);
+                
+                // Create tool section
+                const toolSection = document.createElement('div');
+                toolSection.className = 'tool-section';
+                
+                const toolHeader = document.createElement('div');
+                toolHeader.className = 'tool-header';
+                toolHeader.innerHTML = `
+                    <span>${tool.emoji} ${tool.name}</span>
+                    <button class="copy-tool-btn" onclick="copyToolPaths(${toolIndex})">Copy Tool Paths</button>
+                `;
+                
+                const toolPaths = document.createElement('div');
+                toolPaths.className = 'tool-paths';
+                
+                uniquePaths.forEach((path, pathIndex) => {
+                    const pathDiv = document.createElement('div');
+                    pathDiv.className = 'path-item';
+                    pathDiv.innerHTML = `
+                        <span class="path-text">${path}</span>
+                        <button class="copy-btn" onclick="copyPath('${path.replace(/\\/g, '\\\\')}')">Copy</button>
+                    `;
+                    toolPaths.appendChild(pathDiv);
+                });
+                
+                toolSection.appendChild(toolHeader);
+                toolSection.appendChild(toolPaths);
+                pathList.appendChild(toolSection);
+            });
+            
+            // Remove duplicates from global list
+            allProcessedPaths = [...new Set(allProcessedPaths)];
+        }
+        
+        function copyToClipboard(text) {
+            const textarea = document.getElementById('copyTextarea');
+            textarea.value = text;
+            textarea.select();
+            textarea.setSelectionRange(0, 99999); // For mobile devices
+            
+            try {
+                const successful = document.execCommand('copy');
+                return successful;
+            } catch (err) {
+                console.error('Fallback copy failed:', err);
+                return false;
+            }
+        }
+
+        async function modernCopy(text) {
+            if (navigator.clipboard && window.isSecureContext) {
+                try {
+                    await navigator.clipboard.writeText(text);
+                    return true;
+                } catch (err) {
+                    console.error('Modern clipboard API failed:', err);
+                    return false;
+                }
+            }
+            return false;
+        }
+
+        async function copyPath(path) {
+            const button = event.target;
+            const originalText = button.textContent;
+            
+            // Try modern clipboard API first, then fallback
+            let success = await modernCopy(path);
+            if (!success) {
+                success = copyToClipboard(path);
+            }
+            
+            if (success) {
+                button.textContent = 'Copied!';
+                button.style.backgroundColor = '#45a049';
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.backgroundColor = '#4caf50';
+                }, 1500);
+            } else {
+                button.textContent = 'Failed';
+                button.style.backgroundColor = '#f44336';
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.backgroundColor = '#4caf50';
+                }, 1500);
+            }
+        }
+
+        async function copyToolPaths(toolIndex) {
+            const tool = processedTools[toolIndex];
+            const toolPaths = tool.paths.join('\n');
+            const button = event.target;
+            const originalText = button.textContent;
+            
+            // Try modern clipboard API first, then fallback
+            let success = await modernCopy(toolPaths);
+            if (!success) {
+                success = copyToClipboard(toolPaths);
+            }
+            
+            if (success) {
+                button.textContent = 'Copied!';
+                button.style.backgroundColor = '#45a049';
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.backgroundColor = '#4caf50';
+                }, 1500);
+            } else {
+                button.textContent = 'Failed';
+                button.style.backgroundColor = '#f44336';
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.backgroundColor = '#4caf50';
+                }, 1500);
+            }
+        }
+        
+        async function copyAllPaths() {
+            if (allProcessedPaths.length === 0) {
+                alert('No paths to copy. Generate paths first.');
+                return;
+            }
+            
+            const allPaths = allProcessedPaths.join('\n');
+            const button = event.target;
+            const originalText = button.textContent;
+            
+            // Try modern clipboard API first, then fallback
+            let success = await modernCopy(allPaths);
+            if (!success) {
+                success = copyToClipboard(allPaths);
+            }
+            
+            if (success) {
+                button.textContent = 'Copied All!';
+                button.style.backgroundColor = '#45a049';
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.backgroundColor = '#4caf50';
+                }, 1500);
+            } else {
+                button.textContent = 'Copy Failed';
+                button.style.backgroundColor = '#f44336';
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.backgroundColor = '#4caf50';
+                }, 1500);
+            }
+        }
+        
+        function clearAll() {
+            document.getElementById('username').value = '';
+            document.getElementById('pathList').innerHTML = '<em>Enter a username and click "Generate Paths" to see the directory paths organized by tool...</em>';
+            processedTools = [];
+            allProcessedPaths = [];
+        }
+        
+        // Allow Enter key to generate paths
+        document.getElementById('username').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                generatePaths();
+            }
+        });
+
+        // Focus on username input when page loads
+        window.addEventListener('load', function() {
+            document.getElementById('username').focus();
+        });
+    </script>
+</body>
+</html>
