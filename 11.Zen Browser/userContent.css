@@ -1,0 +1,110 @@
+@media (prefers-color-scheme: dark) {
+  @-moz-document url-prefix("about:") {
+    :root {
+      --in-content-page-color: #CAF4F9 !important;
+      --color-accent-primary: #AE8800 !important;
+      --color-accent-primary-hover: #B5DAEC !important;
+      --color-accent-primary-active: #917221 !important;
+      background-color: #020000 !important;
+      --in-content-page-background: #020000 !important;
+    }
+  }
+
+  @-moz-document url("about:newtab"), url("about:home") {
+    :root {
+      --newtab-background-color: #020000 !important;
+      --newtab-background-color-secondary: #090100 !important;
+      --newtab-element-hover-color: #090100 !important;
+      --newtab-text-primary-color: #CAF4F9 !important;
+      --newtab-wordmark-color: #CAF4F9 !important;
+    }
+
+    .icon {
+      color: #AE8800 !important;
+    }
+
+    .search-wrapper .logo-and-wordmark .logo {
+      background:
+        url("zen-logo-industrial.svg"),
+        url("https://raw.githubusercontent.com/IAmJafeth/zen-browser/main/themes/Industrial/Golden/zen-logo-industrial.svg")
+          no-repeat center !important;
+      display: inline-block !important;
+      height: 82px !important;
+      width: 82px !important;
+      background-size: 82px !important;
+    }
+
+    @media (max-width: 609px) {
+      .search-wrapper .logo-and-wordmark .logo {
+        background-size: 64px !important;
+        height: 64px !important;
+        width: 64px !important;
+      }
+    }
+
+    .card-outer:is(:hover, :focus, .active):not(.placeholder) .card-title {
+      color: #AE8800 !important;
+    }
+
+    .top-site-outer .search-topsite {
+      background-color: #917221 !important;
+    }
+
+    .compact-cards .card-outer .card-context .card-context-icon.icon-download {
+      fill: #B5DAEC !important;
+    }
+  }
+
+  @-moz-document url-prefix("about:preferences") {
+    :root {
+      --zen-colors-tertiary: #0B0C0F !important;
+      --in-content-text-color: #CAF4F9 !important;
+      --link-color: #AE8800 !important;
+      --link-color-hover: #B5DAEC !important;
+      --zen-colors-primary: #090100 !important;
+      --in-content-box-background: #090100 !important;
+      --zen-primary-color: #AE8800 !important;
+    }
+
+    groupbox,
+    moz-card {
+      background: #020000 !important;
+    }
+
+    button,
+    groupbox menulist {
+      background: #090100 !important;
+      color: #CAF4F9 !important;
+    }
+
+    .main-content {
+      background-color: #0B0C0F !important;
+    }
+  }
+
+  @-moz-document url-prefix("about:addons") {
+    :root {
+      --zen-dark-color-mix-base: #0B0C0F !important;
+      --background-color-box: #020000 !important;
+    }
+  }
+
+  @-moz-document url-prefix("about:protections") {
+    :root {
+      --zen-primary-color: #020000 !important;
+      --social-color: #917221 !important;
+      --coockie-color: #B5DAEC !important;
+      --fingerprinter-color: #AE8800 !important;
+      --cryptominer-color: #917221 !important;
+      --tracker-color: #B5DAEC !important;
+      --in-content-primary-button-background-hover: #917221 !important;
+      --in-content-primary-button-text-color-hover: #CAF4F9 !important;
+      --in-content-primary-button-background: #0B0C0F !important;
+      --in-content-primary-button-text-color: #CAF4F9 !important;
+    }
+
+    .card {
+      background-color: #090100 !important;
+    }
+  }
+}

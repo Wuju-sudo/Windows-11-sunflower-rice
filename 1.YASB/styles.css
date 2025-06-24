@@ -1,0 +1,820 @@
+/*
+Base Configuration, modified from i3-style with custom color theme
+For more information about configuration options, please visit the Wiki https://github.com/amnweb/yasb/wiki
+*/
+:root {
+--red: #880D00;
+--maroon: #917221;
+--peach: #AE8800;
+--yellow: #AE8800;
+--green: #917221;
+--teal: #CAF4F9;
+--sky: #B5DAEC;
+--sapphire: #CAF4F9;
+--blue: #B5DAEC;
+--text: #CAF4F9;
+--accent: #AE8800;
+--dark-bg: #090100;
+--darker-bg: #020000;
+--medium-bg: #0B0C0F;
+--gray: #9B9B93;
+}
+
+/* Global styles for ToolTip */
+QToolTip {
+padding: 6px;
+color: var(--text);
+font-size: 12px;
+background-color: var(--dark-bg);
+border: 1px solid var(--accent);
+border-radius: 6px;
+}
+
+/*                                 COMMON YASB ELEMENTS                          */
+
+* {
+font-size: 14px;
+color: var(--text);
+font-weight: 600;
+font-family: "JetBrainsMono NFP";
+margin: 0;
+padding: 0;
+}
+
+.yasb-bar {
+padding: 0;
+margin: 0;
+background: var(--darker-bg);
+backdrop-filter: blur(10px);
+border-radius: 0px;
+border-bottom: 2px solid var(--accent);
+}
+
+.widget {
+padding: 0 3px;
+margin: 0;
+background: var(--medium-bg);
+border: 1px solid var(--maroon);
+}
+
+.icon {
+font-size: 15px;
+color: var(--accent);
+}
+
+.widget .label {
+padding: 0px 2px;
+color: var(--text);
+}
+
+/*                                      WIDGETS                                     */
+/*              Power Menu                     */
+.power-menu-widget .label {
+color: var(--text);
+font-size: 15px;
+padding: 0px 10px 0px 3px;
+}
+
+.power-menu-popup {
+background-color: var(--dark-bg);
+border: 2px solid var(--accent);
+}
+
+.power-menu-popup .button {
+padding: 0;
+width: 180px;
+height: 230px;
+border-radius: 8px;
+background-color: var(--medium-bg);
+color: var(--text);
+border-left: 2px solid var(--maroon);
+border-right: 2px solid var(--maroon);
+border-top: 2px solid var(--maroon);
+border-bottom: 2px solid var(--maroon);
+margin: 0px;
+}
+
+.power-menu-popup .button.hover {
+background-color: var(--accent);
+color: var(--darker-bg);
+border-left: 2px solid var(--sky);
+border-right: 2px solid var(--sky);
+border-top: 2px solid var(--sky);
+border-bottom: 2px solid var(--sky);
+}
+
+.power-menu-popup .button .label {
+margin-bottom: 8px;
+font-size: 16px;
+font-weight: 500;
+color: var(--text);
+}
+
+.power-menu-popup .button.hover .label {
+color: var(--darker-bg);
+}
+
+.power-menu-popup .button .icon {
+font-size: 64px;
+padding-top: 32px;
+color: var(--accent);
+}
+
+.power-menu-popup .button.hover .icon {
+color: var(--darker-bg);
+}
+
+.power-menu-popup .button.cancel .icon {
+padding: 0;
+margin: 0;
+}
+
+.power-menu-popup .button.cancel .label {
+color: var(--red);
+margin: 0;
+}
+
+.power-menu-popup .button.cancel {
+height: 32px;
+border-radius: 4px;
+}
+
+.uptime {
+font-size: 26px;
+margin-bottom: 10px;
+color: var(--text);
+font-weight: 600;
+margin-bottom: 40px;
+}
+
+/*              GlazeWM                      */
+.glazewm-workspaces {
+margin: 0;
+padding: 0;
+background: var(--medium-bg);
+border: 1px solid var(--maroon);
+}
+
+.glazewm-workspaces .ws-btn {
+font-size: 15px;
+background-color: transparent;
+border: none;
+padding: 4px 8px;
+margin: 0;
+color: var(--gray);
+}
+
+.glazewm-workspaces .ws-btn.active_populated,
+.glazewm-workspaces .ws-btn.active_empty,
+.glazewm-workspaces .ws-btn:hover {
+background-color: var(--accent);
+color: var(--darker-bg);
+border-radius: 0px;
+}
+
+.glazewm-workspaces .ws-btn.populated {
+color: var(--text);
+}
+
+.glazewm-workspaces .ws-btn.empty {
+color: var(--gray);
+}
+
+.glazewm-workspaces .ws-btn:hover,
+.glazewm-workspaces .ws-btn.populated:hover,
+.glazewm-workspaces .ws-btn.empty:hover {
+background: var(--accent);
+color: var(--darker-bg);
+margin: 0;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+/*                           Komorebi                        */
+/*                         Control Part                      */
+.komorebi-control-widget .label {
+font-size: 14px;
+color: var(--text);
+font-weight: 600;
+}
+
+.komorebi-control-menu {
+background-color: var(--dark-bg);
+border: 2px solid var(--accent);
+}
+
+.komorebi-control-menu .button {
+color: var(--gray);
+padding: 8px 16px;
+font-size: 32px;
+border-radius: 8px;
+background-color: var(--medium-bg);
+border: 1px solid var(--maroon);
+}
+
+.komorebi-control-menu .button:hover {
+color: var(--text);
+background-color: var(--accent);
+border: 1px solid var(--sky);
+}
+
+.komorebi-control-menu .button.active:hover {
+color: var(--text);
+background-color: var(--accent);
+border: 1px solid var(--sky);
+}
+
+.komorebi-control-menu .button.active {
+color: var(--text);
+background-color: var(--maroon);
+border: 1px solid var(--accent);
+}
+
+.komorebi-control-menu .button:disabled,
+.komorebi-control-menu .button.active:disabled {
+background-color: var(--darker-bg);
+color: var(--gray);
+border: 1px solid var(--gray);
+}
+
+.komorebi-control-menu .footer .text {
+font-size: 12px;
+color: var(--gray);
+}
+
+/* ==================== Workspace Component ==================== */
+
+/* Container Styles */
+.komorebi-workspaces {
+  margin: 0;
+  padding: 0;
+}
+
+.komorebi-workspaces .widget-container {
+  background-color: var(--medium-bg);
+  border: 1px solid var(--maroon);
+  border-radius: 0;
+  margin: 0 4px;
+}
+
+/* Status Indicators */
+.komorebi-workspaces .offline-status {
+  color: var(--red);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 0 2px;
+}
+
+/* Workspace Button Base */
+.komorebi-workspaces .ws-btn {
+  /* Dimensions */
+  width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  margin: 0 2px;
+  
+  /* Appearance */
+  color: var(--gray);
+  font-size: 14px;
+  border-radius: 5px;
+  
+  /* Font setup */
+  font-family: "JetBrainsMono NFP";
+  
+  /* Transitions */
+  transition: all 0.2s ease;
+}
+
+/* Workspace Button Icons */
+.komorebi-workspaces .ws-btn::before {
+  content: "○"; /* Empty circle */
+}
+
+/* Workspace Button States */
+.komorebi-workspaces .ws-btn:hover {
+  color: var(--text);
+  transform: scale(1.1);
+}
+
+.komorebi-workspaces .ws-btn.populated::before {
+  content: "◉"; /* Filled circle with dot */
+  color: var(--text);
+}
+
+.komorebi-workspaces .ws-btn.active {
+  color: var(--darker-bg);
+  background-color: var(--accent);
+}
+
+.komorebi-workspaces .ws-btn.active::before {
+  content: "◆"; /* Filled diamond */
+}
+/*                          Volume Widget                              */
+.volume-widget {
+    padding: 0 4px;
+    background: #0B0C0F; /* medium gray background */
+    border: 1px solid #917221; /* darker gold-brown border */
+}
+
+.volume-widget .icon {
+    color: #AE8800; /* golden yellow for icon */
+    margin: 1px 2px 0 0;
+}
+
+.volume-widget .label {
+    color: #CAF4F9; /* light cyan text */
+}
+
+/* Volume slider/bar styling */
+.volume-widget QSlider {
+    background: #0B0C0F; /* medium gray background */
+}
+
+.volume-widget QSlider::groove:horizontal {
+    background: #020000; /* deep black for groove */
+    height: 4px;
+    border-radius: 2px;
+    border: 1px solid #917221; /* darker gold-brown border */
+}
+
+.volume-widget QSlider::handle:horizontal {
+    background: #AE8800; /* golden yellow for handle */
+    border: 1px solid #B5DAEC; /* light blue border for contrast */
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    margin: -4px 0;
+}
+
+.volume-widget QSlider::add-page:horizontal {
+    background: #020000; /* deep black for unfilled portion */
+    border: 1px solid #917221; /* darker gold-brown border */
+    border-radius: 2px;
+}
+
+.volume-widget QSlider::sub-page:horizontal {
+    background: #AE8800; /* golden yellow for filled portion */
+    border: 1px solid #B5DAEC; /* light blue border */
+    border-radius: 2px;
+}
+/*                          Media                              */
+.media-widget {
+padding: 0;
+margin: 0;
+border-radius: 0;
+background: var(--medium-bg);
+border: 1px solid var(--maroon);
+}
+
+.media-widget .label {
+color: var(--text);
+background-color: var(--dark-bg);
+padding: 0px;
+padding-right: 4px;
+font-size: 12px;
+}
+
+.media-widget .label.maintext {
+padding-top: 3px;
+}
+
+.media-widget .btn {
+color: var(--gray);
+padding: 0 4px;
+margin: 0;
+font-family: Segoe Fluent Icons;
+font-weight: 400;
+}
+
+.media-widget .btn:hover {
+color: var(--accent);
+}
+
+.media-widget .btn.play {
+font-size: 16px;
+}
+
+.media-widget .btn.disabled:hover,
+.media-widget .btn.disabled {
+color: var(--gray);
+font-size: 12px;
+background-color: transparent;
+}
+
+/*                                  System Tray                         */
+.systray {
+background: var(--medium-bg);
+border: 1px solid var(--maroon);
+margin: 0;
+}
+
+.systray .unpinned-container {
+background: var(--dark-bg);
+border-radius: 8px;
+border: 1px solid var(--maroon);
+}
+
+.systray .pinned-container {
+background: transparent;
+}
+
+.systray .pinned-container[forceshow=true] {
+background: var(--accent);
+}
+
+.systray .button {
+border-radius: 10px;
+padding: 3px 3px;
+}
+
+.systray .button:hover {
+background: var(--accent);
+}
+
+.systray .button[dragging=true] {
+background: var(--accent);
+border-color: var(--sky);
+}
+
+.systray .unpinned-visibility-btn {
+border-radius: 4px;
+height: 20px;
+width: 16px;
+}
+
+.systray .unpinned-visibility-btn:checked {
+background: transparent;
+}
+
+.systray .unpinned-visibility-btn:hover {
+border: 1px solid var(--accent);
+border-radius: 4px;
+border-color: var(--accent);
+}
+
+/*                          Wi-Fi                           */
+.wifi-widget .widget-container .icon {
+color: var(--accent);
+background: transparent;
+padding: 3px 0px;
+}
+
+/*                          Battery                           */
+.battery-widget .widget-container .icon {
+padding: 0px 3px;
+}
+
+.battery-widget .widget-container .icon.status-low {
+color: var(--red);
+background: transparent;
+}
+
+.battery-widget .widget-container .icon.status-medium {
+color: var(--accent);
+background: transparent;
+}
+
+.battery-widget .widget-container .icon.status-charging {
+color: var(--sky);
+background: transparent;
+}
+
+/*                          Wallpaper                          */
+.wallpapers-widget {
+padding: 0 6px 0 6px;
+color: var(--text);
+background: var(--medium-bg);
+border: 1px solid var(--maroon);
+}
+
+.wallpapers-gallery-window {
+background-color: var(--dark-bg);
+border: 2px solid var(--accent);
+margin: 0;
+}
+
+.wallpapers-gallery-buttons {
+background-color: var(--medium-bg);
+color: var(--text);
+border: 1px solid var(--maroon);
+font-size: 14px;
+padding: 8px 0;
+border-radius: 8px;
+margin: 0 8px 8px 8px;
+width: 600px;
+}
+
+.wallpapers-gallery-buttons:hover {
+background-color: var(--accent);
+color: var(--darker-bg);
+}
+
+.wallpapers-gallery-image {
+border: 4px solid transparent;
+border-radius: 10px;
+}
+
+.wallpapers-gallery-image:hover {
+border: 4px solid var(--accent);
+}
+
+.wallpapers-gallery-image.focused {
+border: 4px solid var(--sky);
+}
+
+/*                          Clock & Calendar                            */
+.clock-widget .label {
+font-size: 16px;
+font-weight: 900;
+background-color: var(--accent);
+margin: 0;
+padding: 0;
+color: var(--darker-bg);
+}
+
+.clock-widget .icon {
+font-size: 25px;
+margin: 0 -1px;
+padding: 0;
+font-weight: 600;
+color: var(--text);
+}
+
+.clock-widget {
+border-top-left-radius: 24px;
+border-bottom-right-radius: 24px;
+padding: 0 20px;
+background: var(--medium-bg);
+border: 1px solid var(--maroon);
+}
+
+.clock-widget .widget-container .label {
+padding: 0px 0px 2px;
+}
+
+.calendar {
+background-color: var(--dark-bg);
+border: 2px solid var(--accent);
+}
+
+.calendar .calendar-table,
+.calendar .calendar-table::item {
+background-color: var(--dark-bg);
+color: var(--text);
+font-family: 'Segoe UI';
+margin: 0;
+padding: 0;
+border: none;
+outline: none;
+}
+
+.calendar .calendar-table::item:selected {
+color: var(--accent);
+background: var(--medium-bg);
+}
+
+.calendar .day-label {
+margin-top: 20px;
+}
+
+.calendar .day-label,
+.calendar .month-label,
+.calendar .date-label {
+font-family: 'Segoe UI';
+font-size: 16px;
+color: var(--text);
+font-weight: 700;
+min-width: 180px;
+max-width: 180px;
+}
+
+.calendar .month-label {
+font-weight: normal;
+}
+
+.calendar .date-label {
+font-size: 88px;
+font-weight: 900;
+color: var(--accent);
+margin-top: -20px;
+}
+
+/*                             Memory                           */
+.memory-widget .icon {
+color: var(--accent);
+padding: 0px 3px;
+}
+
+/*                              CPU                             */
+.cpu-widget .widget-container .icon {
+color: var(--accent);
+padding: 0px 3px;
+}
+
+/*                          Notifications                        */
+.notification-widget {
+padding: 0 3px 0 3px;
+background: var(--medium-bg);
+border: 1px solid var(--maroon);
+}
+
+.notification-widget .widget-container {
+background: transparent;
+margin: 3px 0 3px 0;
+border-radius: 12px;
+}
+
+.notification-widget .icon {
+font-size: 14px;
+}
+
+.notification-widget .icon.new-notification {
+color: var(--accent);
+}
+
+.notification-widget .label.new-notification {
+color: var(--text);
+}
+
+/*                              Disk                                */
+.disk-widget {
+padding: 0 6px 0 6px;
+background: var(--medium-bg);
+border: 1px solid var(--maroon);
+}
+
+.disk-group {
+background-color: var(--dark-bg);
+border: 1px solid var(--accent);
+}
+
+/* Disk usage bars */
+.disk-widget QProgressBar {
+background: var(--dark-bg);
+border: 1px solid var(--maroon);
+border-radius: 4px;
+text-align: center;
+}
+
+.disk-widget QProgressBar::chunk {
+background: var(--accent);
+border-radius: 3px;
+}
+
+.disk-widget .label {
+color: var(--text);
+}
+
+/*                              Home                                */
+.home-widget {
+padding: 0 6px 0 12px;
+background: var(--medium-bg);
+border: 1px solid var(--maroon);
+}
+
+.home-widget .icon {
+color: var(--accent);
+font-size: 18px;
+}
+
+.home-widget .icon:hover {
+color: var(--sky);
+}
+
+.home-menu {
+background-color: var(--dark-bg);
+border: 2px solid var(--accent);
+}
+
+.home-menu .menu-item {
+padding: 6px 48px 7px 16px;
+font-size: 12px;
+font-family: 'Segoe UI';
+color: var(--text);
+font-weight: 600;
+}
+
+.home-menu .menu-item:hover {
+background-color: var(--accent);
+color: var(--darker-bg);
+}
+
+.home-menu .separator {
+max-height: 1px;
+background-color: var(--maroon);
+}
+
+/*                          Notes                       */
+.notes-widget {
+padding: 0 6px 0 8px;
+background: var(--medium-bg);
+border: 1px solid var(--maroon);
+}
+
+.notes-widget .label {
+font-size: 14px;
+color: var(--text);
+}
+
+.notes-widget .icon {
+font-size: 16px;
+color: var(--accent);
+}
+
+.notes-menu {
+min-width: 400px;
+max-width: 400px;
+background-color: var(--dark-bg);
+border: 2px solid var(--accent);
+}
+
+.notes-menu .note-item {
+background-color: transparent;
+border-bottom: 1px solid var(--maroon);
+}
+
+.notes-menu .note-item:hover {
+background-color: var(--accent);
+color: var(--darker-bg);
+}
+
+.notes-menu .note-item .icon {
+font-size: 16px;
+padding: 0 4px;
+}
+
+.notes-menu .delete-button {
+color: var(--text);
+background: transparent;
+border: none;
+font-size: 8px;
+padding: 7px 8px;
+border-radius: 3px;
+}
+
+.notes-menu .delete-button:hover {
+background-color: var(--red);
+color: var(--text);
+}
+
+.notes-menu .note-item .title {
+font-size: 13px;
+font-family: 'Segoe UI';
+color: var(--text);
+}
+
+.notes-menu .note-item .date {
+font-size: 12px;
+font-family: 'Segoe UI';
+color: var(--gray);
+}
+
+.notes-menu .empty-list {
+font-family: 'Segoe UI';
+color: var(--gray);
+font-size: 24px;
+font-weight: 600;
+padding: 10px 0 20px 0;
+}
+
+.notes-menu .add-button,
+.notes-menu .cancel-button {
+padding: 8px;
+background-color: var(--medium-bg);
+border: 1px solid var(--maroon);
+border-radius: 4px;
+color: var(--text);
+font-family: 'Segoe UI';
+}
+
+.notes-menu .cancel-button {
+margin-left: 4px;
+}
+
+.notes-menu .add-button:hover,
+.notes-menu .cancel-button:hover {
+background-color: var(--accent);
+color: var(--darker-bg);
+}
+
+.notes-menu .scroll-area {
+background: transparent;
+border: none;
+border-radius: 0;
+}
+
+.notes-menu .note-input {
+background-color: var(--dark-bg);
+border: 1px solid var(--accent);
+font-family: 'Segoe UI';
+font-size: 14px;
+max-height: 30px;
+padding: 4px;
+border-radius: 6px;
+color: var(--text);
+}
+
+.note-input:focus {
+border: 1px solid var(--sky);
+}

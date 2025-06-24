@@ -1,0 +1,111 @@
+* {
+  font-family: "JetBrains Mono" !important;
+}
+
+#zen-essentials-container {
+  margin-bottom: 3px !important;
+}
+
+#zen-current-workspace-indicator-container,
+.titlebar-buttonbox-container {
+  display: none !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --zen-colors-primary: #020000 !important;
+    --zen-colors-secondary: #090100 !important;
+    --zen-colors-tertiary: #0B0C0F !important;
+    --zen-colors-border: #917221 !important;
+
+    --zen-primary-color: #AE8800 !important;
+    --zen-themed-toolbar-bg: #0B0C0F !important;
+    --zen-main-browser-background: #0B0C0F !important;
+
+    --toolbarbutton-icon-fill: #CAF4F9 !important;
+    --toolbar-field-color: #CAF4F9 !important;
+    --toolbar-field-focus-color: #CAF4F9 !important;
+    --toolbar-color: #CAF4F9 !important;
+    --toolbar-bgcolor: #090100 !important;
+    --toolbox-bgcolor-inactive: #0B0C0F !important;
+
+    --lwt-text-color: #CAF4F9 !important;
+    --lwt-sidebar-text-color: #CAF4F9 !important;
+    --lwt-sidebar-background-color: #0B0C0F !important;
+
+    --sidebar-text-color: #CAF4F9 !important;
+    --tab-selected-textcolor: #CAF4F9 !important;
+
+    --arrowpanel-color: #CAF4F9 !important;
+    --arrowpanel-background: #020000 !important;
+
+    --newtab-background-color: #020000 !important;
+    --newtab-text-primary-color: #CAF4F9 !important;
+    --newtab-primary-action-background: #AE8800 !important;
+  }
+
+  /* Zen UI elements */
+  #zen-workspaces-button {
+    background-color: #020000 !important;
+  }
+
+  #zenEditBookmarkPanelFaviconContainer {
+    background: #0B0C0F !important;
+  }
+
+  /* URL bar */
+  #urlbar-container,
+  #urlbar-background {
+    background-color: #0B0C0F !important;
+  }
+
+  .urlbar[breakout][breakout-extend] > #urlbar-background {
+    background-color: #0B0C0F !important;
+    border: 1px solid #917221 !important;
+  }
+
+  .urlbarView-title,
+  .urlbarView-secondary {
+    color: #CAF4F9 !important;
+  }
+
+  .urlbarView-url,
+  .urlbarView-url strong {
+    color: #AE8800 !important;
+  }
+
+  .urlbarView-action,
+  .urlbarView-row[selected] .urlbarView-action {
+    color: #9B9B93 !important;
+  }
+
+  .urlbarView-row[selected],
+  .urlbarView-row[selected] > .urlbarView-row-inner {
+    background-color: #090100 !important;
+    color: #CAF4F9 !important;
+  }
+
+  .urlbarView-row[selected] .urlbarView-title strong {
+    color: #CAF4F9 !important;
+    font-weight: bold !important;
+  }
+
+  .urlbarView-row[selected] .urlbarView-favicon {
+    background-color: #917221 !important;
+    border-radius: 4px !important;
+  }
+
+  .urlbarView-body-inner {
+    border: none !important;
+  }
+
+  .urlbar-input-box {
+    text-align: center;
+  }
+
+  /* New Tab Shortcuts */
+  .content-shortcuts {
+    background-color: #020000 !important;
+    border-color: #AE8800 !important;
+  }
+}

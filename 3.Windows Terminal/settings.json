@@ -1,0 +1,184 @@
+{
+    "$help": "https://aka.ms/terminal-documentation",
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "actions": [],
+    "alwaysShowTabs": true,
+    "centerOnLaunch": true,
+    "copyFormatting": "none",
+    "copyOnSelect": false,
+    "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+    "initialCols": 75,
+    "initialRows": 20,
+    "keybindings":
+    [
+        {
+            "id": "Terminal.CopyToClipboard",
+            "keys": "ctrl+c"
+        },
+        {
+            "id": "Terminal.PasteFromClipboard",
+            "keys": "ctrl+v"
+        },
+        {
+            "id": "Terminal.DuplicatePaneAuto",
+            "keys": "alt+shift+d"
+        }
+    ],
+    "language": "en-US",
+    "launchMode": "focus",
+    "newTabMenu":
+    [
+        {
+            "type": "remainingProfiles"
+        }
+    ],
+    "profiles":
+    {
+        "defaults":
+        {
+            "colorScheme": "Industrial Dark",
+            "font":
+            {
+                "face": "0xProto Nerd Font Mono",
+                "size": 12
+            }
+        },
+        "list":
+        [
+            {
+                "commandline": "C:\\Program Files\\PowerShell\\7-preview\\pwsh.exe",
+                "cursorShape": "vintage",
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": false,
+                "name": "Windows PowerShell",
+                "opacity": 40,
+                "useAcrylic": true
+            },
+            {
+                "commandline": "%SystemRoot%\\System32\\cmd.exe",
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": false,
+                "name": "Command Prompt"
+            },
+            {
+                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+                "hidden": false,
+                "name": "Azure Cloud Shell",
+                "source": "Windows.Terminal.Azure"
+            },
+            {
+                "adjustIndistinguishableColors": "always",
+                "commandline": "C:\\Program Files\\PowerShell\\7-preview\\pwsh.exe",
+                "cursorShape": "vintage",
+                "experimental.retroTerminalEffect": false,
+                "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+                "hidden": false,
+                "name": "PowerShell Preview",
+                "opacity": 90,
+                "scrollbarState": "hidden",
+                "useAcrylic": false
+            }
+        ]
+    },
+    "schemes":
+    [
+        {
+            "name": "Industrial Dark",
+            "background": "#020000",
+            "foreground": "#F5F5F0",
+            "black": "#020000",
+            "red": "#880D00",
+            "green": "#AE8800",
+            "yellow": "#AE8800",
+            "blue": "#B5DAEC",
+            "purple": "#917221",
+            "cyan": "#F5F5F0",
+            "white": "#F5F5F0",
+            "brightBlack": "#0B0C0F",
+            "brightRed": "#880D00",
+            "brightGreen": "#AE8800",
+            "brightYellow": "#AE8800",
+            "brightBlue": "#B5DAEC",
+            "brightPurple": "#917221",
+            "brightCyan": "#F5F5F0",
+            "brightWhite": "#F5F5F0",
+            "cursorColor": "#AE8800",
+            "selectionBackground": "#917221"
+        },
+        {
+            "name": "Extreme Contrast",
+            "background": "#000000",
+            "foreground": "#FFFFFF",
+            "black": "#000000",
+            "red": "#FFFFFF",
+            "green": "#FFFFFF",
+            "yellow": "#FFFFFF",
+            "blue": "#FFFFFF",
+            "purple": "#FFFFFF",
+            "cyan": "#FFFFFF",
+            "white": "#FFFFFF",
+            "brightBlack": "#808080",
+            "brightRed": "#FFFFFF",
+            "brightGreen": "#FFFFFF",
+            "brightYellow": "#FFFFFF",
+            "brightBlue": "#FFFFFF",
+            "brightPurple": "#FFFFFF",
+            "brightCyan": "#FFFFFF",
+            "brightWhite": "#FFFFFF",
+            "cursorColor": "#FFFFFF",
+            "selectionBackground": "#FFFFFF"
+        },
+        {
+            "background": "#1E1E2E",
+            "black": "#45475A",
+            "blue": "#89B4FA",
+            "brightBlack": "#585B70",
+            "brightBlue": "#89B4FA",
+            "brightCyan": "#94E2D5",
+            "brightGreen": "#A6E3A1",
+            "brightPurple": "#F5C2E7",
+            "brightRed": "#F38BA8",
+            "brightWhite": "#A6ADC8",
+            "brightYellow": "#F9E2AF",
+            "cursorColor": "#F5E0DC",
+            "cyan": "#94E2D5",
+            "foreground": "#CDD6F4",
+            "green": "#A6E3A1",
+            "name": "Catppuccin Mocha",
+            "purple": "#F5C2E7",
+            "red": "#F38BA8",
+            "selectionBackground": "#585B70",
+            "white": "#BAC2DE",
+            "yellow": "#F9E2AF"
+        },
+        {
+            "background": "#2E3440",
+            "black": "#3B4252",
+            "blue": "#81A1C1",
+            "brightBlack": "#4C566A",
+            "brightBlue": "#81A1C1",
+            "brightCyan": "#8FBCBB",
+            "brightGreen": "#A3BE8C",
+            "brightPurple": "#B48EAD",
+            "brightRed": "#BF616A",
+            "brightWhite": "#ECEFF4",
+            "brightYellow": "#EBCB8B",
+            "cursorColor": "#ECEFF4",
+            "cyan": "#88C0D0",
+            "foreground": "#D8DEE9",
+            "green": "#A3BE8C",
+            "name": "nord",
+            "purple": "#B48EAD",
+            "red": "#BF616A",
+            "selectionBackground": "#ECEFF4",
+            "white": "#E5E9F0",
+            "yellow": "#EBCB8B"
+        }
+    ],
+    "showTabsInTitlebar": true,
+    "showTerminalTitleInTitlebar": false,
+    "tabWidthMode": "compact",
+    "theme": "system",
+    "themes": [],
+    "useAcrylicInTabRow": true
+}
