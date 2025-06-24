@@ -11,7 +11,8 @@ Note task bar is usually on automatically hide in windows settings
 or you can also use tools like explorer patcher
 it is obvious you must change "<username>" to your actual username
 I added a tool called "Username_Exchanger.html" you write your actual user name and it provided a list of paths for that username
-<img src="Tool.png" width="20" height="20" />
+![Screenshot 1](Tool.png)
+
 ## 1. Core Tools & Features
 
 | 🛠️ Tool | ⚙️ Config | 📁 Location | 📄 Description |
