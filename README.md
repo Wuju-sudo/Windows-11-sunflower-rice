@@ -14,15 +14,15 @@ or you can also use tools like explorer patcher
 
 | 🛠️ Tool | ⚙️ Config | 📁 Location | 📄 Description |
 |---------|-----------|-------------|----------------|
-| **[Wallpaper](https://github.com/Wuju-sudo/Windows-11-sunflower-rice/tree/63acce2c51b24df51fbe7fb36026c414697d2944/9.Wallpaper)** | - | `C:\Users\<username>\wallpapers\`<br>or any preferred location | Desktop wallpaper management |
-| **[yasb](https://github.com/amnweb/yasb)** | [✓](https://github.com/Wuju-sudo/Windows-11-sunflower-rice/tree/63acce2c51b24df51fbe7fb36026c414697d2944/1.YASB) | `C:\Users\<username>\.config\yasb\config.yaml`<br>`C:\Users\<username>\.config\yasb\styles.css` | Yet Another Status Bar (top bar) |
-| **[komorebi](https://github.com/LGUG2Z/komorebi)** | [✓](https://github.com/Wuju-sudo/Windows-11-sunflower-rice/tree/63acce2c51b24df51fbe7fb36026c414697d2944/2.Komorebi) | `C:\Users\<username>\komorebi.json`<br>`C:\Users\<username>\applications.json`<br>`C:\Users\<username>\komorebi.bar.json`<br>`C:\Users\<username>\.config\whkdrc` | Tiling window manager for Windows |
-| **[Windows Terminal](https://github.com/microsoft/terminal)** | [✓](https://github.com/Wuju-sudo/Windows-11-sunflower-rice/tree/63acce2c51b24df51fbe7fb36026c414697d2944/3.Windows%20Terminal) | `C:\Users\<username>\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json`<br>`C:\Users\<username>\AppData\Local\Packages\Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe\LocalState\settings.json` | Terminal emulator<br>⚠️ *Backup original configs - requires tiling WM for window control* |
-| **[starship](https://github.com/starship/starship)** | [✓](https://github.com/Wuju-sudo/Windows-11-sunflower-rice/tree/63acce2c51b24df51fbe7fb36026c414697d2944/4.Starship) | `C:\Users\<username>\.config\starship.toml` | Cross-shell prompt |
-| **[PowerShell](https://github.com/PowerShell/PowerShell)** | [✓](https://github.com/Wuju-sudo/Windows-11-sunflower-rice/tree/63acce2c51b24df51fbe7fb36026c414697d2944/5.Powershell) | `C:\Users\<username>\Documents\PowerShell\Microsoft.PowerShell_profile.ps1` | Windows shell configuration |
-| **[Flow Launcher](https://github.com/Flow-Launcher/Flow.Launcher)** | [✓](https://github.com/Wuju-sudo/Windows-11-sunflower-rice/tree/63acce2c51b24df51fbe7fb36026c414697d2944/6.Flow%20Launcher) | `C:\Users\<username>\AppData\Roaming\FlowLauncher\Themes\theme.xaml` | Keystroke launcher |
-| **[cava](https://github.com/karlstav/cava)** | [✓](https://github.com/Wuju-sudo/Windows-11-sunflower-rice/tree/63acce2c51b24df51fbe7fb36026c414697d2944/7.cava) | `C:\Users\<username>\.config\cava\config`<br>`C:\Users\<username>\.config\cava\shaders\` | Audio visualizer |
-| **[fastfetch](https://github.com/fastfetch-cli/fastfetch)** | [✓](https://github.com/Wuju-sudo/Windows-11-sunflower-rice/tree/63acce2c51b24df51fbe7fb36026c414697d2944/8.fastfetch) | `C:\Users\<username>\.config\fastfetch\config.jsonc` | System information tool |
+| **[Wallpaper](9.Wallpaper)** | - | `C:\Users\<username>\wallpapers\`<br>or any preferred location | Desktop wallpaper management |
+| **[yasb](https://github.com/amnweb/yasb)** | [✓](1.YASB) | `C:\Users\<username>\.config\yasb\config.yaml`<br>`C:\Users\<username>\.config\yasb\styles.css` | Yet Another Status Bar (top bar) |
+| **[komorebi](https://github.com/LGUG2Z/komorebi)** | [✓](2.Komorebi) | `C:\Users\<username>\komorebi.json`<br>`C:\Users\<username>\applications.json`<br>`C:\Users\<username>\komorebi.bar.json`<br>`C:\Users\<username>\.config\whkdrc` | Tiling window manager for Windows |
+| **[Windows Terminal](https://github.com/microsoft/terminal)** | [✓](3.Windows Terminal) | `C:\Users\<username>\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json`<br>`C:\Users\<username>\AppData\Local\Packages\Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe\LocalState\settings.json` | Terminal emulator<br>⚠️ *Backup original configs - requires tiling WM for window control* |
+| **[starship](https://github.com/starship/starship)** | [✓](4.Starship) | `C:\Users\<username>\.config\starship.toml` | Cross-shell prompt |
+| **[PowerShell](https://github.com/PowerShell/PowerShell)** | [✓](5.Powershell) | `C:\Users\<username>\Documents\PowerShell\Microsoft.PowerShell_profile.ps1` | Windows shell configuration |
+| **[Flow Launcher](https://github.com/Flow-Launcher/Flow.Launcher)** | [✓](6.Flow Launcher) | `C:\Users\<username>\AppData\Roaming\FlowLauncher\Themes\theme.xaml` | Keystroke launcher |
+| **[cava](https://github.com/karlstav/cava)** | [✓](7.cava) | `C:\Users\<username>\.config\cava\config`<br>`C:\Users\<username>\.config\cava\shaders\` | Audio visualizer |
+| **[fastfetch](https://github.com/fastfetch-cli/fastfetch)** | [✓](8.fastfetch) | `C:\Users\<username>\.config\fastfetch\config.jsonc` | System information tool |
 
 it is obvious you must change "<username>" to your actual username
 I added a tool called "Username_Exchanger.html" to get it [here](https://github.com/Wuju-sudo/Windows-11-sunflower-rice/blob/b16906de01bfba3cc0feff323e0a2631e5573fd2/Username_Exchanger.html) you write your actual user name and it provided a list of paths for that username
@@ -60,7 +60,7 @@ alt + f : komorebic toggle-float
 3. Windows 11 Notification Center Styler
 4. Taskbar Clock Customization
 
-from this [Folder](https://github.com/Wuju-sudo/Windows-11-sunflower-rice/tree/63acce2c51b24df51fbe7fb36026c414697d2944/10.WindHawk)
+from this [Folder](10.WindHawk)
 ### Configuration Steps:
 1. Install each mod
 2. Go to **Advanced** settings for each
@@ -81,7 +81,7 @@ Navigate to **Settings → Personalization** and enable:
 
 ## 6. Zen Browser Configuration
 
-my configs are [here](https://github.com/Wuju-sudo/Windows-11-sunflower-rice/tree/63acce2c51b24df51fbe7fb36026c414697d2944/11.Zen%20Browser)
+my configs are [here](11.Zen Browser)
 For Firefox-based browsers only:
 
 1. **Enable custom styling:**
