@@ -17,10 +17,10 @@ or you can also use tools like explorer patcher
 | **[Wallpaper](9.Wallpaper)** | - | `C:\Users\<username>\wallpapers\`<br>or any preferred location | Desktop wallpaper management |
 | **[yasb](https://github.com/amnweb/yasb)** | [✓](1.YASB) | `C:\Users\<username>\.config\yasb\config.yaml`<br>`C:\Users\<username>\.config\yasb\styles.css` | Yet Another Status Bar (top bar) |
 | **[komorebi](https://github.com/LGUG2Z/komorebi)** | [✓](2.Komorebi) | `C:\Users\<username>\komorebi.json`<br>`C:\Users\<username>\applications.json`<br>`C:\Users\<username>\komorebi.bar.json`<br>`C:\Users\<username>\.config\whkdrc` | Tiling window manager for Windows |
-| **[Windows Terminal](https://github.com/microsoft/terminal)** | [✓](3.Windows Terminal) | `C:\Users\<username>\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json`<br>`C:\Users\<username>\AppData\Local\Packages\Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe\LocalState\settings.json` | Terminal emulator<br>⚠️ *Backup original configs - requires tiling WM for window control* |
+| **[Windows Terminal](https://github.com/microsoft/terminal)** | [✓]([3.Windows Terminal](https://github.com/Wuju-sudo/Windows-11-sunflower-rice/tree/main/3.Windows%20Terminal)) | `C:\Users\<username>\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json`<br>`C:\Users\<username>\AppData\Local\Packages\Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe\LocalState\settings.json` | Terminal emulator<br>⚠️ *Backup original configs - requires tiling WM for window control* |
 | **[starship](https://github.com/starship/starship)** | [✓](4.Starship) | `C:\Users\<username>\.config\starship.toml` | Cross-shell prompt |
 | **[PowerShell](https://github.com/PowerShell/PowerShell)** | [✓](5.Powershell) | `C:\Users\<username>\Documents\PowerShell\Microsoft.PowerShell_profile.ps1` | Windows shell configuration |
-| **[Flow Launcher](https://github.com/Flow-Launcher/Flow.Launcher)** | [✓](6.Flow Launcher) | `C:\Users\<username>\AppData\Roaming\FlowLauncher\Themes\theme.xaml` | Keystroke launcher |
+| **[Flow Launcher](https://github.com/Flow-Launcher/Flow.Launcher)** | [✓]([6.Flow Launcher](https://github.com/Wuju-sudo/Windows-11-sunflower-rice/tree/main/6.Flow%20Launcher)) | `C:\Users\<username>\AppData\Roaming\FlowLauncher\Themes\theme.xaml` | Keystroke launcher |
 | **[cava](https://github.com/karlstav/cava)** | [✓](7.cava) | `C:\Users\<username>\.config\cava\config`<br>`C:\Users\<username>\.config\cava\shaders\` | Audio visualizer |
 | **[fastfetch](https://github.com/fastfetch-cli/fastfetch)** | [✓](8.fastfetch) | `C:\Users\<username>\.config\fastfetch\config.jsonc` | System information tool |
 
@@ -81,7 +81,7 @@ Navigate to **Settings → Personalization** and enable:
 
 ## 6. Zen Browser Configuration
 
-my configs are [here](11.Zen Browser)
+my configs are [here]([11.Zen Browser](https://github.com/Wuju-sudo/Windows-11-sunflower-rice/tree/main/11.Zen%20Browser))
 For Firefox-based browsers only:
 
 1. **Enable custom styling:**
