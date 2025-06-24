@@ -23,6 +23,8 @@ These tools should be added to your system PATH for terminal access:
 2. **[pipes-rs](https://github.com/lhvy/pipes-rs)** - Animated pipes screensaver
 3. **[btm](https://github.com/ClementTsang/bottom)** - Hardware resources monitor
 
+to access system PATH type in windows search "Edit the system environment variables"
+
 ## 3. Komorebi Configuration
 
 ### Key Bindings Modifications:
@@ -87,48 +89,3 @@ To display images in Windows Terminal, convert to SIXEL format using [ImageMagic
 magick image.png -resize 200x sixel:image.sixel
 ```
 *Adjust the `200x` value as needed*
-
-## 8. LazyGit Setup & Config Management
-
-### Installing LazyGit:
-```bash
-# Using Scoop
-scoop install lazygit
-
-# Or using Chocolatey
-choco install lazygit
-
-# Or download from GitHub releases
-# https://github.com/jesseduffield/lazygit/releases
-```
-
-### Committing All Configs:
-1. **Initialize repository** (if not already done):
-   ```bash
-   cd ~
-   git init
-   ```
-
-2. **Add all config files:**
-   ```bash
-   # Add individual configs
-   git add .config/
-   git add komorebi.json
-   git add applications.json
-   git add komorebi.bar.json
-   git add Documents/PowerShell/Microsoft.PowerShell_profile.ps1
-   
-   # Or add everything at once
-   git add -A
-   ```
-
-3. **Commit changes:**
-   ```bash
-   git commit -m "Add Windows configuration files"
-   ```
-
-4. **Push to GitHub:**
-   ```bash
-   git remote add origin https://github.com/yourusername/yourrepo.git
-   git push -u origin main
-   ```
