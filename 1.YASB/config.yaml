@@ -1,12 +1,4 @@
-# Changes made from the base config, make sure to read the docs provided in the third comment to modify according to one's liking
-# This is solely meant for GlazeWM users as I haven't touched Komorebi for I love GlazeWM's simplicity.
-# UPDATE: Done modifying with Komorebi!
 # For more information about configuration options, please visit the Wiki https://github.com/amnweb/yasb/wiki
-#
-# KEY FIX: Corrected all instances of 'True' to 'true'. YAML requires boolean values to be lowercase. 
-# This was likely preventing the blur effect and other settings from being applied correctly.
-# ADDITION: Added and configured the Cava widget for audio visualization.
-#
 watch_stylesheet: true
 watch_config: true
 debug: false
